@@ -1,0 +1,371 @@
+/* --- 1. RESET GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* --- 2. HEADER (Cabecera) --- */
+header {
+    width: 100%;
+    background-color: white;
+}
+
+#header-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 20px;
+}
+
+#logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    max-width: 60%;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 8px 15px;
+    transition: border-color 0.3s;
+}
+
+.buscador:focus-within {
+    border-color: #d82329;
+}
+
+#buscador-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+}
+
+.icono-lupa {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#boton-acciones button {
+    background-color: #d82329;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 48px;
+}
+
+/* Menú */
+#header-inferior {
+    border-bottom: 2px solid #eeeeee;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+}
+
+#menu li {
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+#menu li:hover {
+    color: #d82329;
+}
+
+/* --- 3. CUERPO PRINCIPAL (MAIN) --- */
+main {
+    width: 90%; /* Un poco más de aire en pantallas medianas */
+    max-width: 1200px; /* Evita que en pantallas muy grandes se estire demasiado */
+    margin: 0 auto;
+    gap: 40px; /* Un espacio más moderado entre secciones */
+}
+
+/* Estilo para cada bloque de contenido */
+.bloque-contenido {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura el centrado interno */
+    text-align: center;
+    margin-top: 100px;
+}
+
+.texto-historia {
+    max-width: 850px;
+}
+
+.texto-historia h1 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Un pequeño detalle: una línea roja debajo del título */
+.texto-historia h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%; /* Si está centrado */
+    width: 50%;
+    height: 3px;
+    background-color: #d82329;
+}
+.cuadro-mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+
+.texto-historia p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #444;
+}
+
+.contenedor-imagen img {
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Mapa centrado */
+.cuadro-mapa {
+    width: 100%;
+    max-width: 850px;
+    height: 400px;
+    background-color: #f0f0f0;
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-weight: bold;
+}
+
+/* Sección Gris de Ubicación */
+#donde-estamos {
+    background-color: #f9f9f9;
+    padding: 50px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 850px;
+}
+
+#donde-estamos h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.datos-contacto p {
+    font-size: 1.1em;
+    line-height: 2;
+    color: #333;
+}
+
+
+/* Ocultamos el botón de hamburguesa por defecto (en PC no se ve) */
+#menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    margin-top: 80px; /* Para mantener la separación que te gusta */
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.whatsapp-btn {
+    color: #25d366 !important; /* Color verde de WhatsApp */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    width: 100%; 
+    max-width: 1100px;
+    margin-top: 30px;
+}
+
+.tarjeta-producto {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+.tarjeta-producto:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.etiqueta-oferta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d82329;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.contenedor-img-producto {
+    width: 100%;
+    height: 200px; /* Esto obliga a que todas las ofertas midan lo mismo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Fondo blanco por si la imagen es pequeña */
+    margin-bottom: 15px;
+    overflow: hidden; /* Corta cualquier excedente que genere líneas */
+}
+
+.tarjeta-producto img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    display: block; /* Elimina espacios extra debajo de la imagen */
+    border: none;   /* Asegura que no haya bordes negros por defecto */
+}
+
+.precio-anterior {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.precio-actual {
+    color: #d82329;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.btn-agregar {
+    width: 100%;
+    background: #d82329;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 1. Organizamos el Header Superior */
+    #header-superior {
+        display: grid; /* Usamos grid para posicionar como tu dibujo */
+        grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
+        grid-template-areas: 
+            "hamburguesa logo carrito"
+            "buscador buscador buscador"; /* Buscador abajo ocupando todo */
+        align-items: center;
+        gap: 15px;
+    }
+
+    #menu-hamburguesa {
+        display: block; /* Aparece el cuadro verde */
+        grid-area: hamburguesa;
+        text-align: left;
+    }
+
+    #logo { grid-area: logo; text-align: center; }
+    #boton-acciones { grid-area: carrito; text-align: right; }
+    
+    .buscador { 
+        grid-area: buscador; /* Cuadro amarillo abajo */
+        width: 100%; 
+        max-width: 100%;
+    }
+
+    #header-inferior {
+        display: none; /* Se activa con el JS */
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 2px solid #d82329;
+        /* Quitamos 'position: absolute' para que no tape nada */
+        position: relative; 
+        top: 0; 
+        left: 0;
+        z-index: 999;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: flex-start; /* Alinea los textos a la izquierda */
+        padding: 10px 20px;
+        gap: 0; /* Quitamos el gap para usar bordes */
+    }
+
+    #menu li {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #eeeeee; /* Línea sutil entre categorías */
+        font-size: 1.1em;
+    }
+
+    #menu li:last-child {
+        border-bottom: none;
+    }
+
+    /* 3. Ajuste de imágenes y mapa para que no se rompan */
+    .contenedor-imagen img, .cuadro-mapa, #donde-estamos {
+        max-width: 100%;
+    }
+}
+
